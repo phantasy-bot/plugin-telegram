@@ -1,52 +1,45 @@
 {
-  "name": "@phantasy/plugin-telegram",
-  "version": "2.0.1",
-  "private": false,
+  "slug": "plugin-telegram",
+  "packageName": "@phantasy/plugin-telegram",
+  "displayName": "Telegram",
   "description": "Telegram bot and channel integration plugin for Phantasy companions.",
-  "license": "MIT",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "SECURITY.md",
-    "phantasy.plugin.json"
-  ],
-  "sideEffects": false,
-  "keywords": [
+  "workspace": "business",
+  "extensionKind": "integration",
+  "category": "messaging",
+  "tags": [
     "telegram",
     "messaging",
     "bot",
     "community"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/phantasy-bot/plugin-telegram"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "homepage": "https://github.com/phantasy-bot/plugin-telegram",
-  "scripts": {
-    "build": "tsup",
-    "typecheck": "tsc --noEmit"
-  },
-  "peerDependencies": {
-    "@phantasy/agent": "^2.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^24.0.0",
-    "tsup": "^8.0.0",
-    "typescript": "^5.9.2"
+  "permissions": [
+    "internet"
+  ],
+  "dependencies": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-telegram",
+  "sourceOfTruth": "standalone-repo",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
+  "repoExists": true,
+  "npmPublished": false,
+  "sourceExtract": {
+    "files": [
+      {
+        "sourcePath": "src/plugins/telegram/index.ts",
+        "targetPath": "src/index.ts"
+      },
+      {
+        "sourcePath": "src/plugins/telegram/telegram-plugin.ts",
+        "targetPath": "src/telegram-plugin.ts"
+      }
+    ],
+    "replacements": [
+      {
+        "from": "\"@/plugins/base-plugin\"",
+        "to": "\"@phantasy/agent/plugins\""
+      }
+    ]
   },
   "phantasy": {
     "displayName": "Telegram",
@@ -89,5 +82,6 @@
         }
       }
     }
-  }
+  },
+  "exportedAt": "2026-03-22T00:40:18.965Z"
 }
