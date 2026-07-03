@@ -69,15 +69,16 @@ function normalizeTelegramConfig(config: Partial<TelegramConfig>): TelegramConfi
     replyDelay: readNumber(config.replyDelay, 0),
     webhookSecret: readOptionalString(config.webhookSecret),
     webhookUrl: readOptionalString(config.webhookUrl),
-    mode:
-      mode === "auto" || mode === "webhook" || mode === "polling" ? mode : "auto",
+    mode: mode === "auto" || mode === "webhook" || mode === "polling" ? mode : "auto",
     autoStart: readBoolean(config.autoStart),
     connected: readBoolean(config.connected),
     lastUpdateId: readNumber(config.lastUpdateId, 0),
   };
 }
 
-function getTelegramIntegrationConfig(agent: unknown): Partial<TelegramConfig> | undefined {
+function getTelegramIntegrationConfig(
+  agent: unknown,
+): Partial<TelegramConfig> | undefined {
   const integrations = getNestedRecord(agent, "integrations");
   const telegram = getNestedRecord(integrations, "telegram");
   if (Object.keys(telegram).length === 0) {

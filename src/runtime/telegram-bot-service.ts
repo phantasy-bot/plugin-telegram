@@ -104,7 +104,8 @@ export class TelegramBotService {
       platform: "telegram",
       registerDirectHandler: true,
       registerMentionHandler: true,
-      registerMessageHandler: this.config.enableAutoReply && !this.config.enableMentionOnly,
+      registerMessageHandler:
+        this.config.enableAutoReply && !this.config.enableMentionOnly,
       registerSubscribedHandler: true,
       replyDelayMs: Math.max(0, this.config.replyDelay) * 1000,
       stateKeyPrefix: "phantasy-chat-sdk:telegram",
@@ -182,7 +183,11 @@ export class TelegramBotService {
       return null;
     }
 
-    if (!this.config.enableAutoReply && event.reason !== "direct" && event.reason !== "mention") {
+    if (
+      !this.config.enableAutoReply &&
+      event.reason !== "direct" &&
+      event.reason !== "mention"
+    ) {
       return null;
     }
 

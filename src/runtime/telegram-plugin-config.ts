@@ -94,8 +94,7 @@ export function buildTelegramRuntimeConfig(input: {
       snapshot.webhookUrl,
       stored?.webhookUrl,
     ),
-    mode:
-      mode === "auto" || mode === "webhook" || mode === "polling" ? mode : "auto",
+    mode: mode === "auto" || mode === "webhook" || mode === "polling" ? mode : "auto",
     autoStart: readBoolean(overrides?.autoStart, snapshot.autoStart, stored?.autoStart),
     connected: stored?.connected,
     lastUpdateId: readNumber(

@@ -152,7 +152,11 @@ export class TelegramPlugin extends BasePlugin implements PlatformCapability {
       await this.botService.stop();
     }
 
-    this.botService = new TelegramBotService(this.getRuntimeEnv(), nextConfig, webhookUrl);
+    this.botService = new TelegramBotService(
+      this.getRuntimeEnv(),
+      nextConfig,
+      webhookUrl,
+    );
     await this.botService.start();
     this.lastActivity = new Date();
 
@@ -248,7 +252,9 @@ export class TelegramPlugin extends BasePlugin implements PlatformCapability {
       error: connected ? undefined : "Telegram bot is not connected",
       summary: connected ? "Configured" : "Configured, not running",
       configuredChannels,
-      recommendedActions: ["Start the integration after configuring Telegram credentials."],
+      recommendedActions: [
+        "Start the integration after configuring Telegram credentials.",
+      ],
     };
   }
 

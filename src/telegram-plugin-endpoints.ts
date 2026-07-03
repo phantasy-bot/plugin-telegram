@@ -79,7 +79,7 @@ export async function handleTelegramPluginEndpoint(
     });
   }
 
-  if ((path === "/test-connection") && request.method === "POST") {
+  if (path === "/test-connection" && request.method === "POST") {
     const body = await request.json().catch(() => ({}));
     const runtimeConfig = await plugin.buildRuntimeConfig(
       (body || {}) as Partial<TelegramConfig>,
