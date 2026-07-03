@@ -1,0 +1,111 @@
+{
+  "slug": "plugin-telegram",
+  "packageName": "@phantasy/plugin-telegram",
+  "displayName": "Telegram",
+  "description": "Telegram bot and channel integration plugin for Phantasy companions.",
+  "workspace": "business",
+  "extensionKind": "integration",
+  "category": "messaging",
+  "tags": [
+    "telegram",
+    "messaging",
+    "bot",
+    "community"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "dependencies": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-telegram",
+  "sourceOfTruth": "monorepo",
+  "sourceOwner": "monorepo",
+  "sourcePayload": "source-extract",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
+  "sourceExtract": {
+    "packageDependencies": {
+      "@chat-adapter/telegram": "^4.32.0"
+    },
+    "files": [
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/index.ts",
+        "targetPath": "src/index.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/telegram-plugin.ts",
+        "targetPath": "src/telegram-plugin.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/telegram-plugin-endpoints.ts",
+        "targetPath": "src/telegram-plugin-endpoints.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/telegram-integration.ts",
+        "targetPath": "src/telegram-integration.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/runtime/telegram-bot-service.ts",
+        "targetPath": "src/runtime/telegram-bot-service.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/runtime/telegram-thread-helpers.ts",
+        "targetPath": "src/runtime/telegram-thread-helpers.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/runtime/config-helpers.ts",
+        "targetPath": "src/runtime/config-helpers.ts"
+      },
+      {
+        "sourcePath": "src/first-party-plugins/plugin-telegram/runtime/telegram-plugin-config.ts",
+        "targetPath": "src/runtime/telegram-plugin-config.ts"
+      }
+    ]
+  },
+  "repoExists": true,
+  "npmPublished": false,
+  "runtimeLoadMode": "git",
+  "monorepoPackageStatus": "removed",
+  "phantasy": {
+    "displayName": "Telegram",
+    "category": "messaging",
+    "tags": [
+      "telegram",
+      "messaging",
+      "bot",
+      "community"
+    ],
+    "workspace": "business",
+    "extensionKind": "integration",
+    "permissions": [
+      "internet"
+    ],
+    "pluginDependencies": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": false,
+    "adminSurface": {
+      "tabId": "telegram",
+      "label": "Telegram",
+      "workspace": "business",
+      "kind": "generic",
+      "keywords": [
+        "telegram",
+        "messaging",
+        "bot",
+        "community"
+      ]
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "exportedAt": "2026-07-03T01:49:09.647Z"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@phantasy/plugin-telegram",
+  "version": "0.1.0-beta",
+  "description": "Telegram bot and channel integration plugin for Phantasy companions.",
+  "displayName": "Telegram",
+  "main": "./dist/index.js",
+  "workspace": "business",
+  "extensionKind": "integration",
+  "category": "messaging",
+  "tags": [
+    "telegram",
+    "messaging",
+    "bot",
+    "community"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "dependencies": [],
+  "adminSurface": {
+    "tabId": "telegram",
+    "label": "Telegram",
+    "workspace": "business",
+    "kind": "generic",
+    "keywords": [
+      "telegram",
+      "messaging",
+      "bot",
+      "community"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  }
+}
